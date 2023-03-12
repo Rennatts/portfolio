@@ -18,16 +18,22 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.nav_list}>
           <li className={styles.nav_item}>
-            <Link href="#about">About</Link>
+            <Link href="#about">01. About</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link href="#experience">Experience</Link>
+            <Link href="#experience">02. Work</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link href="#work">Work</Link>
+            <Link href="#experience">03. Skills</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link href="#contact">Contact</Link>
+            <Link href="#work">04. Projects</Link>
+          </li>
+          <li className={styles.nav_item}>
+            <Link href="#work">04. Timeline</Link>
+          </li>
+          <li className={styles.nav_item}>
+            <Link href="#contact">05. Contact</Link>
           </li>
         </ul>
       </nav>
@@ -149,6 +155,48 @@ export default function Home() {
                 Developer
               </motion.p>
             </motion.div>
+          </div>
+          <div className={styles.coffee_box}>
+            <motion.div>
+              <motion.img
+                src="/coffee_03.gif"
+                alt="coffee"
+                className={styles.coffee}
+                // whileHover={{ scale: 1.1 }}
+                // whileTap={{ scale: 0.2 }}
+                // animate={{
+                //   y: ["0%", "30%"],
+                // }}
+                // transition={{
+                //   duration: 2,
+                //   ease: "linear",
+                //   loop: Infinity,
+                //   delay: 2.8
+                // }}
+                initial={{ opacity: 0, y: -60 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 3 }}
+                width={250}
+                height={224}
+              />
+            </motion.div>
+            <motion.p
+              className={styles.turn_coffee_code}
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 3 }}
+              >
+                I turn <br/> coffee <br/> into code
+            </motion.p>
+            {/* <Image
+              src="/coffee_03.gif"
+              alt="Vercel Logo"
+              className={styles.coffee}
+              width={250}
+              height={224}
+              priority
+            /> */}
+            {/* <p>I turn <br/> coffee <br/> into code</p> */}
           </div>
 
         </section>
