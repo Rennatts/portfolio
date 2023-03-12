@@ -110,7 +110,6 @@ export default function Home() {
                   height={250}
                 />
             </motion.div>
-            <iframe src="https://giphy.com/embed/m5OaA7238YLr0qsLis" width="320" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/m5OaA7238YLr0qsLis">via GIPHY</a></p>
           </div>
           <div className={styles.description}>
             <motion.div
