@@ -46,6 +46,7 @@ const Header = () => {
 export default function Home() {
   const imageRef = useRef<HTMLImageElement>(null);
   const [yPosition, setYPosition] = useState(0);
+  const cometRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -157,22 +158,32 @@ export default function Home() {
             </motion.div>
           </div>
           <div className={styles.coffee_box}>
+            <motion.img
+              src="/comet-01.png"
+              alt="comet"
+              className={styles.coffee}
+              initial={{ opacity: 0, x: -400, y: -400 }}
+              animate={{
+                opacity: [0, 1, 1, 0], // Added an additional keyframe for opacity
+                x: [-400, 400],
+                y: [-400, 400],
+              }}
+              transition={{
+                duration: 4,
+                delay: 3,
+                times: [0, 0.5, 0.9, 1], // Added a new timing for the opacity keyframe
+              }}
+              width={250}
+              height={224}
+            />
+          </div>
+          
+          {/* <div className={styles.coffee_box}>
             <motion.div>
               <motion.img
                 src="/coffee_03.gif"
                 alt="coffee"
                 className={styles.coffee}
-                // whileHover={{ scale: 1.1 }}
-                // whileTap={{ scale: 0.2 }}
-                // animate={{
-                //   y: ["0%", "30%"],
-                // }}
-                // transition={{
-                //   duration: 2,
-                //   ease: "linear",
-                //   loop: Infinity,
-                //   delay: 2.8
-                // }}
                 initial={{ opacity: 0, y: -60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 3 }}
@@ -188,18 +199,14 @@ export default function Home() {
               >
                 I turn <br/> coffee <br/> into code
             </motion.p>
-            {/* <Image
-              src="/coffee_03.gif"
-              alt="Vercel Logo"
-              className={styles.coffee}
-              width={250}
-              height={224}
-              priority
-            /> */}
-            {/* <p>I turn <br/> coffee <br/> into code</p> */}
-          </div>
-
+          </div> */}
         </section>
+        <section id="experience" className={styles.experience}>
+          <h2>Experience</h2>
+          <p>Some text about yourself.</p>
+          <p>Some text about yourself.</p>
+        </section>
+
         {/* <section id="about" className={styles.about}>
           <h2>About</h2>
           <p>Some text about yourself.</p>
