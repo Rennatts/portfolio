@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Parallax } from 'react-parallax';
@@ -21,7 +21,7 @@ const Header = () => {
             <Link href="#about">01. About</Link>
           </li>
           <li className={styles.nav_item}>
-            <Link href="#experience">02. Work</Link>
+            <Link href="#experience">02. Experience</Link>
           </li>
           <li className={styles.nav_item}>
             <Link href="#experience">03. Skills</Link>
@@ -70,7 +70,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.2 }}
                 style={{ 
                   display: "flex", 
                   justifyContent: "center", 
@@ -88,7 +88,7 @@ export default function Home() {
                   x: ["0%", "40%"],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 1.5,
                   ease: "linear",
                   loop: Infinity,
                 }}
@@ -104,14 +104,14 @@ export default function Home() {
                   style={{
                     width: "35%",
                     position: "relative",
-                    top: `${yPosition * 1.5}px`,
-                    zIndex: -10,
+                    top: `${yPosition * 1.7}px`,
+                    zIndex: -100,
                   }}
                   animate={{
                     x: ["0%", "100%"],
                   }}
                   transition={{
-                    duration: 2,
+                    duration: 1.5,
                     ease: "linear",
                     loop: Infinity,
                   }}
@@ -136,7 +136,7 @@ export default function Home() {
               <motion.p
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.2 }}
+              transition={{ duration: 1, delay: 1.8 }}
               style={{marginRight: "10px"}}
               >
                 Full
@@ -144,7 +144,7 @@ export default function Home() {
               <motion.p
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.4 }}
+              transition={{ duration: 1, delay: 2.0 }}
               style={{marginRight: "10px"}}
               >
                 Stack 
@@ -152,27 +152,27 @@ export default function Home() {
               <motion.p
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.6 }}
+              transition={{ duration: 1, delay: 2.2 }}
               >
                 Developer
               </motion.p>
             </motion.div>
           </div>
-          <div className={styles.coffee_box}>
+          <div className={styles.comet_box}>
             <motion.img
               src="/comet-01.png"
               alt="comet"
               className={styles.coffee}
               initial={{ opacity: 0, x: -400, y: -400 }}
               animate={{
-                opacity: [0, 1, 1, 0], // Added an additional keyframe for opacity
+                opacity: [0, 1, 1, 0],
                 x: [-400, 400],
                 y: [-400, 400],
               }}
               transition={{
                 duration: 4,
-                delay: 2,
-                times: [0, 0.5, 0.9, 1], // Added a new timing for the opacity keyframe
+                delay: 1.7,
+                times: [0, 0.5, 0.9, 1], 
               }}
               width={250}
               height={224}
@@ -205,32 +205,38 @@ export default function Home() {
         <section id="experience" className={styles.experience}>
           <h2>Experience</h2>
           <div className={styles.experiences_list}>
-          <div className={styles.experience_01}>
-            <h3>Banqi</h3>
-            <span>04/2022 to current</span>
-            <ul>
-              <li>React Native on the front-end and NestJS</li>
-              <li>Contributed to the process of improving error messages, reducing contact rate and costs</li>
-              <li>Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
-              <li>Implemented new features and aligned business goals with product managers and UI team</li>
-              <li>Implemented push notifications and wrote technical documentation</li>
-              <li>Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
-              <li>Involved in upstream processes for story prioritization based on data</li>
-              <li>Experience with agile methodology and continuous integration</li>
-            </ul>
-          </div>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+            <div className={styles.experience_01}>
+              <h3>Banqi</h3>
+              <span>From 04/2022 to current</span>
+              <ul>
+                <li data-icon="🔸">React Native on the front-end and NestJS</li>
+                <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+                <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+                <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
+                <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
+                <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+                <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
+                <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
+              </ul>
+            </div>
+            </motion.div>
           <div className={styles.experience_02}>
             <h3>ViewB</h3>
-            <span>08/2021 to 03/2022</span>
+            <span>From 08/2021 to 03/2022</span>
             <ul>
-              <li>React Native on the front-end and NestJS</li>
-              <li>Contributed to the process of improving error messages, reducing contact rate and costs</li>
-              <li>Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
-              <li>Implemented new features and aligned business goals with product managers and UI team</li>
-              <li>Implemented push notifications and wrote technical documentation</li>
-              <li>Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
-              <li>Involved in upstream processes for story prioritization based on data</li>
-              <li>Experience with agile methodology and continuous integration</li>
+              <li data-icon="🔸">React Native on the front-end and NestJS</li>
+              <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+              <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+              <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
+              <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
+              <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+              <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
+              <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
             </ul>
           </div>
 
