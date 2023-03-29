@@ -70,7 +70,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ 
                   display: "flex", 
                   justifyContent: "center", 
@@ -105,9 +105,10 @@ export default function Home() {
                     width: "35%",
                     position: "relative",
                     top: `${yPosition * 1.5}px`,
+                    zIndex: -10,
                   }}
                   animate={{
-                    x: ["0%", "85%"],
+                    x: ["0%", "100%"],
                   }}
                   transition={{
                     duration: 2,
@@ -170,7 +171,7 @@ export default function Home() {
               }}
               transition={{
                 duration: 4,
-                delay: 3,
+                delay: 2,
                 times: [0, 0.5, 0.9, 1], // Added a new timing for the opacity keyframe
               }}
               width={250}
@@ -203,8 +204,37 @@ export default function Home() {
         </section>
         <section id="experience" className={styles.experience}>
           <h2>Experience</h2>
-          <p>Some text about yourself.</p>
-          <p>Some text about yourself.</p>
+          <div className={styles.experiences_list}>
+          <div className={styles.experience_01}>
+            <h3>Banqi</h3>
+            <span>04/2022 to current</span>
+            <ul>
+              <li>React Native on the front-end and NestJS</li>
+              <li>Contributed to the process of improving error messages, reducing contact rate and costs</li>
+              <li>Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+              <li>Implemented new features and aligned business goals with product managers and UI team</li>
+              <li>Implemented push notifications and wrote technical documentation</li>
+              <li>Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+              <li>Involved in upstream processes for story prioritization based on data</li>
+              <li>Experience with agile methodology and continuous integration</li>
+            </ul>
+          </div>
+          <div className={styles.experience_02}>
+            <h3>ViewB</h3>
+            <span>08/2021 to 03/2022</span>
+            <ul>
+              <li>React Native on the front-end and NestJS</li>
+              <li>Contributed to the process of improving error messages, reducing contact rate and costs</li>
+              <li>Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+              <li>Implemented new features and aligned business goals with product managers and UI team</li>
+              <li>Implemented push notifications and wrote technical documentation</li>
+              <li>Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+              <li>Involved in upstream processes for story prioritization based on data</li>
+              <li>Experience with agile methodology and continuous integration</li>
+            </ul>
+          </div>
+
+          </div>
         </section>
 
         {/* <section id="about" className={styles.about}>

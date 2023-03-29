@@ -4,11 +4,11 @@
   background-position: center center;
   background-attachment: fixed;
   position: relative;
-  z-index: -100;
+  z-index: 0;
   transform-style: preserve-3d;
   perspective: 1000px;
   animation: animate 10s linear infinite;
-
+  height: 100%;
 }
 
 
@@ -63,12 +63,12 @@
 }
 
 
-.topics_container{
+/* .topics_container{
   height: 100vh;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
-}
+} */
 
 .about {
   width: 100%;
@@ -94,7 +94,7 @@
   justify-content: column;
   flex-direction: column;
   overflow: "hidden";
-  height: 80%;
+  height: 100vh;
 }
 
 .intro{
@@ -167,5 +167,41 @@
 
 
 .experience{
-  heigh: 1000px;
+  margin-top: 60px;
+  width: 100vw;
+  transform: translateZ(-100px);
+  perspective: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: column;
+  flex-direction: column;
+  overflow: "hidden";
+  height: 80%;
+}
+
+.experiences_list{
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1.2fr 1.2fr;
+  grid-gap: 5.5em;
+  margin-left: 10%;  
+  margin-right: 10%;
+  margin-top: 6%;
+}
+
+.experience_01 {
+  background-color: purple;
+  padding: 10%;
+  border-radius: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.experience_02 {
+  background-color: green;
+  padding: 10%;
+  border-radius: 20px;
+  z-index: 10;
+  position: relative;
 }
