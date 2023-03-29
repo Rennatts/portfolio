@@ -2,9 +2,11 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Parallax } from 'react-parallax';
 import { useEffect, useRef, useState } from 'react'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -46,7 +48,13 @@ const Header = () => {
 export default function Home() {
   const imageRef = useRef<HTMLImageElement>(null);
   const [yPosition, setYPosition] = useState(0);
-  const cometRef = useRef();
+  const controls = useAnimation();
+  const [experience01Ref, inView] = useInView({ threshold: 0.5 }); 
+  const controls2 = useAnimation();
+  const [experienceRef2, inView2] = useInView({ threshold: 0.7 });
+
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +67,24 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
+
   }, []);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ x: 0, opacity: 1 });
+    }
+
+  }, [controls, inView]);
+
+  useEffect(() => {
+    if (inView2) {
+      controls2.start({ x: 0, opacity: 1 });
+    }
+  }, [controls2, inView2]);
+  
+  
+
   
   return (
     <div className={styles.background_image_container}>
@@ -104,7 +129,7 @@ export default function Home() {
                   style={{
                     width: "35%",
                     position: "relative",
-                    top: `${yPosition * 1.7}px`,
+                    top: `${yPosition * 1.8}px`,
                     zIndex: -100,
                   }}
                   animate={{
@@ -203,44 +228,60 @@ export default function Home() {
           </div> */}
         </section>
         <section id="experience" className={styles.experience}>
-          <h2>Experience</h2>
-          <div className={styles.experiences_list}>
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-            <div className={styles.experience_01}>
-              <h3>Banqi</h3>
-              <span>From 04/2022 to current</span>
-              <ul>
-                <li data-icon="🔸">React Native on the front-end and NestJS</li>
-                <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
-                <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
-                <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
-                <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
-                <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
-                <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
-                <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
-              </ul>
-            </div>
-            </motion.div>
-          <div className={styles.experience_02}>
-            <h3>ViewB</h3>
-            <span>From 08/2021 to 03/2022</span>
-            <ul>
-              <li data-icon="🔸">React Native on the front-end and NestJS</li>
-              <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
-              <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
-              <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
-              <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
-              <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
-              <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
-              <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
-            </ul>
-          </div>
+            <h2>Experience</h2>
+            <div className={styles.experiences_list}>
+              <motion.div
+                className={styles.experience_01}
+                ref={experience01Ref}
+                initial={{ x: -100, opacity: 0 }}
+                animate={controls}
+                transition={{ duration: 1 }}
+              >
+                <div className={styles.experience_01}>
+                  <div className={styles.header}>
+                    <h3>Banqi</h3>
+                    <span>From 04/2022 to current</span>
+                  </div>
+                  <ul>
+                    <li data-icon="🔸">React Native and NestJS</li>
+                    <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+                    <li data-icon="🔸">Large-scale project, with micro-services architecture, clean architecture, Docker, AWS ...</li>
+                    <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
+                    <li data-icon="🔸">Technical documentation</li>
+                    <li data-icon="🔸">Unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small tasks</li>
+                    <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
+                    <li data-icon="🔸">Agile methodology and continuous integration</li>
+                  </ul>
+                </div>
+              </motion.div>
 
-          </div>
+              <motion.div
+                className={styles.experience_01}
+                ref={experienceRef2}
+                initial={{ x: -100, opacity: 0 }}
+                animate={controls}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                <div className={styles.experience_02}>
+                  <div className={styles.header}>
+                    <h3>ViewB</h3>
+                    <span>From 08/2021 to 03/2022</span>
+                  </div>
+                  <ul>
+                    <li data-icon="🔸">Angular</li>
+                    <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+                    <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+                    <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
+                    <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
+                    <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+                    <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
+                    <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
+                  </ul>
+                </div>
+              </motion.div>
+
+
+            </div>
         </section>
 
         {/* <section id="about" className={styles.about}>
