@@ -243,14 +243,14 @@ export default function Home() {
                     <span>From 04/2022 to current</span>
                   </div>
                   <ul>
-                    <li data-icon="🔸">React Native and NestJS</li>
-                    <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
-                    <li data-icon="🔸">Large-scale project, with micro-services architecture, clean architecture, Docker, AWS ...</li>
-                    <li data-icon="🔸">Aligned business goals with product managers and UI team</li>
-                    <li data-icon="🔸">Technical documentation</li>
-                    <li data-icon="🔸">Unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small tasks</li>
-                    <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
-                    <li data-icon="🔸">Agile methodology and continuous integration</li>
+                    <li data-icon="🪐">React Native and NestJS</li>
+                    <li data-icon="🪐">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+                    <li data-icon="🪐">Large-scale project, with micro-services architecture, clean architecture, Docker, AWS ...</li>
+                    <li data-icon="🪐">Aligned business goals with product managers and UI team</li>
+                    <li data-icon="🪐">Technical documentation</li>
+                    <li data-icon="🪐">Unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small tasks</li>
+                    <li data-icon="🪐">Involved in upstream processes for story prioritization based on data</li>
+                    <li data-icon="🪐">Agile methodology and continuous integration</li>
                   </ul> 
                 </div>
               </motion.div>
@@ -268,14 +268,14 @@ export default function Home() {
                     <span>From 08/2021 to 03/2022</span>
                   </div>
                   <ul>
-                    <li data-icon="🔸">Angular</li>
-                    <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
-                    <li data-icon="🔸">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
-                    <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
-                    <li data-icon="🔸">Implemented push notifications and wrote technical documentation</li>
-                    <li data-icon="🔸">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
-                    <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
-                    <li data-icon="🔸">Experience with agile methodology and continuous integration</li>
+                    <li data-icon="🪐">Angular</li>
+                    <li data-icon="🪐">Contributed to the process of improving error messages, reducing contact rate and costs</li>
+                    <li data-icon="🪐">Experience in a large-scale project, with micro-services architecture, clean architecture, Docker, AWS, BDD</li>
+                    <li data-icon="🪐">Implemented new features and aligned business goals with product managers and UI team</li>
+                    <li data-icon="🪐">Implemented push notifications and wrote technical documentation</li>
+                    <li data-icon="🪐">Fixed bugs, applied unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small batches</li>
+                    <li data-icon="🪐">Involved in upstream processes for story prioritization based on data</li>
+                    <li data-icon="🪐">Experience with agile methodology and continuous integration</li>
                   </ul>
                 </div>
               </motion.div>
