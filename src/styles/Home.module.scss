@@ -164,7 +164,7 @@
   justify-content: column;
   flex-direction: column;
   overflow: "hidden";
-  height: 200vh;
+  height: 260vh;
 
   .experiences_list{
     display: grid;
@@ -176,47 +176,50 @@
     margin-top: 6%;
   }
 
-  .experience_01 {
-    padding: 10%;
-    border-radius: 20px;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    z-index: -100;
-  
-  
-    .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-  
-    ul{
-      margin-top: 10%;
-    }
-    
-    ul li{
-      list-style: none;
-      margin-top: 2%;
-    }
-  
-    ul li::before {
-      content: attr(data-icon);
-      font-size: 1.25em;
-      margin-right: 1%;
-    }
-  }
-  
+  .experience_01,
   .experience_02 {
     padding: 10%;
     border-radius: 20px;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    z-index: -100;
+    border: none;
+    z-index: 1;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      transform: scale(1.1) rotate(2deg); // Add rotation and slightly increase the scaling
+      transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease; // Add transition for smooth effect
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      z-index: -1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+      z-index: -1;
+    }
   
     .header {
       display: flex;

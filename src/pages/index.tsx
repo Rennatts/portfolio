@@ -246,19 +246,19 @@ export default function Home() {
                     <li data-icon="🔸">React Native and NestJS</li>
                     <li data-icon="🔸">Contributed to the process of improving error messages, reducing contact rate and costs</li>
                     <li data-icon="🔸">Large-scale project, with micro-services architecture, clean architecture, Docker, AWS ...</li>
-                    <li data-icon="🔸">Implemented new features and aligned business goals with product managers and UI team</li>
+                    <li data-icon="🔸">Aligned business goals with product managers and UI team</li>
                     <li data-icon="🔸">Technical documentation</li>
                     <li data-icon="🔸">Unit tests and BDD. Participated in code reviews, technical refinements, and breaking down stories into small tasks</li>
                     <li data-icon="🔸">Involved in upstream processes for story prioritization based on data</li>
                     <li data-icon="🔸">Agile methodology and continuous integration</li>
-                  </ul>
+                  </ul> 
                 </div>
               </motion.div>
 
               <motion.div
                 className={styles.experience_01}
                 ref={experienceRef2}
-                initial={{ x: -100, opacity: 0 }}
+                initial={{ x: -200, opacity: 0 }}
                 animate={controls}
                 transition={{ duration: 1, delay: 2 }}
               >
