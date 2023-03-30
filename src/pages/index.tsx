@@ -5,11 +5,8 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { InView } from 'react-intersection-observer';
 
-
-
-
-const inter = Inter({ subsets: ['latin'] })
 
 const Header = () => {
   return (
@@ -47,12 +44,13 @@ const Header = () => {
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement>(null);
+  const aboutMeRef = useRef<HTMLImageElement>(null);
   const [yPosition, setYPosition] = useState(0);
   const controls = useAnimation();
   const [experience01Ref, inView] = useInView({ threshold: 0.5 }); 
   const controls2 = useAnimation();
   const [experienceRef2, inView2] = useInView({ threshold: 0.7 });
-
+  const [isRocketVisible, setIsRocketVisible] = useState(false);
 
 
 
@@ -82,8 +80,8 @@ export default function Home() {
       controls2.start({ x: 0, opacity: 1 });
     }
   }, [controls2, inView2]);
-  
-  
+
+
 
   
   return (
@@ -203,29 +201,57 @@ export default function Home() {
               height={224}
             />
           </div>
-          
-          {/* <div className={styles.coffee_box}>
-            <motion.div>
+        
+          <motion.div
+            className={styles.about_me}
+            ref={aboutMeRef}
+            >
+            <InView
+              as="div"
+              onChange={(inView) => setIsRocketVisible(inView)}
+            >
               <motion.img
-                src="/coffee_03.gif"
-                alt="coffee"
-                className={styles.coffee}
-                initial={{ opacity: 0, y: -60 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 3 }}
+                src="/rocket.png"
+                alt="rocket"
                 width={250}
                 height={224}
+                initial={{ opacity: 0, y: 400 }}
+                animate={{
+                  opacity: isRocketVisible ? [0, 1, 1] : 0,
+                  y: isRocketVisible ? [400, -250] : 400,
+                }}
+                transition={{
+                  duration: 4,
+                  delay: 1.0,
+                  times: [0, 0.5, 1],
+                  ease: 'easeInOut',
+                }}
               />
-            </motion.div>
-            <motion.p
-              className={styles.turn_coffee_code}
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 3 }}
+            </InView>
+            <motion.div
+              className={styles.intro}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: [0, 1],
+              }}
+              transition={{
+                duration: 1,
+                delay: 1.2,
+              }}
               >
-                I turn <br/> coffee <br/> into code
-            </motion.p>
-          </div> */}
+              <p>
+                Fueled by coffee and a fascination with the universe.
+              </p>
+              <p>
+                I find joy in building innovative tech solutions
+              </p>
+              <p>
+                that prioritize user experience.
+              </p>
+            </motion.div>
+          </motion.div>
+
+
         </section>
         <section id="experience" className={styles.experience}>
             <h2>Experience</h2>
@@ -286,6 +312,7 @@ export default function Home() {
 
             </div>
             <Image className={styles.black_hole} src="/black_hole.png" alt="black_hole" width={500} height={300}></Image>
+            
         </section>
 
         <section id="skills" className={styles.skills}>
@@ -293,6 +320,28 @@ export default function Home() {
           <h2>Skills</h2>
           <p>Some text about yourself.</p>
           <p>Some text about yourself.</p>
+          <div className={styles.coffee_box}>
+            <motion.div>
+              <motion.img
+                src="/coffee_03.gif"
+                alt="coffee"
+                className={styles.coffee}
+                initial={{ opacity: 0, y: -60 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 3 }}
+                width={250}
+                height={224}
+              />
+            </motion.div>
+            <motion.p
+              className={styles.turn_coffee_code}
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 3 }}
+              >
+                I turn <br/> coffee <br/> into code
+            </motion.p>
+          </div>
         </section>
         {/* <section id="experience">
           <h2>Experience</h2>
