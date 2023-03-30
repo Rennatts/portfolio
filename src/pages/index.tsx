@@ -129,7 +129,7 @@ export default function Home() {
                   style={{
                     width: "35%",
                     position: "relative",
-                    top: `${yPosition * 2.2}px`,
+                    top: `${yPosition * 1.8}px`,
                     zIndex: -100,
                   }}
                   animate={{
