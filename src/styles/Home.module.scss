@@ -164,7 +164,7 @@
   justify-content: column;
   flex-direction: column;
   overflow: "hidden";
-  height: 260vh;
+  height: 330vh;
 
   .experiences_list{
     display: grid;
@@ -189,6 +189,8 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
+    cursor: pointer;
+
 
     &:hover {
       box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.6);
@@ -226,6 +228,13 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+    }
+
+    .image_box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12%;
     }
   
     ul{

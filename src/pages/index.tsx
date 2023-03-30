@@ -129,7 +129,7 @@ export default function Home() {
                   style={{
                     width: "35%",
                     position: "relative",
-                    top: `${yPosition * 1.8}px`,
+                    top: `${yPosition * 2.2}px`,
                     zIndex: -100,
                   }}
                   animate={{
@@ -196,7 +196,7 @@ export default function Home() {
               }}
               transition={{
                 duration: 4,
-                delay: 1.7,
+                delay: 1.2,
                 times: [0, 0.5, 0.9, 1], 
               }}
               width={250}
@@ -241,6 +241,9 @@ export default function Home() {
                   <div className={styles.header}>
                     <h3>Banqi</h3>
                     <span>From 04/2022 to current</span>
+                  </div>
+                  <div className={styles.image_box}>
+                    <Image src="/banqi.png" alt="banqi" width={300} height={300}></Image>
                   </div>
                   <ul>
                     <li data-icon="🪐">React Native and NestJS</li>
