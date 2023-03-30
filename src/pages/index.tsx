@@ -118,7 +118,7 @@ export default function Home() {
                   loop: Infinity,
                 }}
                 >
-                  I'm RENATA MACHADO
+                  Im RENATA MACHADO
                 </motion.p>
                 <motion.img
                   ref={imageRef}
@@ -285,13 +285,15 @@ export default function Home() {
 
 
             </div>
+            <Image className={styles.black_hole} src="/black_hole.png" alt="black_hole" width={500} height={300}></Image>
         </section>
 
-        {/* <section id="about" className={styles.about}>
-          <h2>About</h2>
+        <section id="skills" className={styles.skills}>
+          <div className={styles.drip}></div>
+          <h2>Skills</h2>
           <p>Some text about yourself.</p>
           <p>Some text about yourself.</p>
-        </section> */}
+        </section>
         {/* <section id="experience">
           <h2>Experience</h2>
           <p>Some text about your experience.</p>

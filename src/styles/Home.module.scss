@@ -252,5 +252,43 @@
       margin-right: 1%;
     }
   }
+
+  .black_hole{
+    position: relative;
+    top: 260px;
+    right: -300px;
+    z-index: 100
+  }
   
+}
+
+
+
+.skills{
+  margin-top: 60px;
+  width: 100vw;
+  transform: translateZ(-100px);
+  perspective: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: column;
+  flex-direction: column;
+  overflow: "hidden";
+  height: 330vh;
+  background-color: aqua;
+  z-index: -100;
+
+  .drip {
+    position: absolute;
+    top: -13px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    /* Updated coffee color for the wavy top */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none' fill='%236B4C35'%3E%3Cpath d='M0,0 Q25,40 50,0 Q75,40 100,0 L100,100 L0,100 Z'/%3E%3C/svg%3E");
+    background-size: cover;
+  }
+
+
 }
